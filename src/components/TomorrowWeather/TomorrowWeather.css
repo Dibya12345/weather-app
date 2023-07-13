@@ -1,0 +1,11 @@
+.current_status_container {
+  width: 18.75em;
+  height: 31.25em;
+  background-color: #dff296;
+  padding: 1.25em;
+  border-radius: 1.25em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 40px;
+}

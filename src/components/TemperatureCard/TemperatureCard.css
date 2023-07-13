@@ -1,0 +1,58 @@
+.temperture_graph {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 18.75em;
+  height: 18.75em;
+  border-radius: 1.875em;
+  padding: 1.25em;
+  margin: 1.875em;
+}
+
+.temperture_graph_container {
+  display: flex;
+  margin-top: 1.25em;
+}
+
+.temperture_graph_container > div {
+  width: 2.75em;
+  height: 8.75em;
+  border-right: 0.125em solid #eef2f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1.25em;
+}
+
+.temperture_graph_container > div > img {
+  padding: 0.3125em; /* 5px / 16px = 0.3125em */
+  border-radius: 50%;
+}
+
+.temp_ {
+  font-size: 0.7375em;
+  text-align: center;
+  margin-top: 0.9375em;
+}
+
+.box_4 > img {
+  background-color: white;
+  border: 0.0625em solid grey;
+}
+
+.box_3 > img {
+  background-color: white;
+  border: 0.0625em solid grey;
+}
+
+.box_2 > img {
+  background-color: white;
+  border: 0.0625em solid grey;
+}
+
+.box_1 > img {
+  background-color: black;
+}

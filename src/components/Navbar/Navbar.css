@@ -1,0 +1,126 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 1.25em;
+  height: 6.25em;
+  background-color: #fff;
+  box-shadow: 0 0.0625em 0.125em rgba(0, 0, 0, 0.1);
+}
+.profile_section {
+  display: flex;
+  align-items: center;
+}
+
+.profile_section > div {
+  margin-left: 0.625em;
+}
+.profile_section > div > h2 {
+  margin-bottom: 0.5em;
+  font-size: 1.8em;
+  color: orangered;
+}
+.profile_section > div > p {
+  margin-top: 0.5em;
+  font-size: 1.8em;
+}
+.search {
+  background: #f6f6f6;
+  height: 2.5em;
+  border-radius: 2.5em;
+  padding: 0.625em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.search:hover > .search-txt {
+  width: 11.25em;
+  padding: 0 0.625em;
+}
+
+.search:hover > .search-btn {
+  background: black;
+}
+
+.search-btn {
+  color: orange;
+  float: right;
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+
+.search-txt {
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0;
+  font-size: 1rem;
+  transition: ease-in 0.4s;
+  line-height: 2.5em;
+  width: 6.875em;
+}
+
+.fas fa-search {
+  font-weight: 200;
+  font-size: 2.5em;
+}
+
+.search_container > button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 2.5em;
+  height: 1.875em;
+  border-radius: 0.3125em;
+  background-color: yellow;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+/* Media queries */
+@media screen and (max-width: 48em) {
+  .profile_image {
+    width: 2.5em;
+    height: 2.5em;
+  }
+
+  .profile_section > div {
+    margin-left: 0.3125em;
+  }
+  .search {
+    height: 1.9em;
+    border-radius: 1.875em;
+    padding: 0.5em;
+  }
+
+  .search:hover > .search-txt {
+    width: 7.5em;
+  }
+}
+
+@media screen and (max-width: 30em) {
+  .profile_image {
+    width: 1.875em;
+    height: 1.875em;
+  }
+
+  .profile_section > div {
+    margin-left: 0.125em;
+  }
+
+  .profile_section > div > h2 {
+    font-size: 1em;
+  }
+
+  .profile_section > div > p {
+    font-size: 0.6em;
+  }
+}

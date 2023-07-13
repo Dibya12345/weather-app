@@ -1,0 +1,22 @@
+.error_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.error_location {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.error_image {
+  height: 20em;
+}
+.error_location > p {
+  padding: 10px;
+  font-size: 1.5em;
+  font-weight: 100;
+  margin-top: 1em;
+  text-align: center;
+}

@@ -85,6 +85,34 @@
   outline: none;
   cursor: pointer;
 }
+
+.country_list {
+  overflow: hidden;
+  position: absolute;
+  top: 6.375em;
+  left: 74%;
+  width: 300px;
+  height: 500px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+.country_list::-webkit-scrollbar {
+  display: none;
+}
+
+.country_list > div {
+  padding: 0.625em;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.country_list > div:hover {
+  background-color: orange;
+  color: white;
+}
+
 /* Media queries */
 @media screen and (max-width: 48em) {
   .profile_image {
@@ -100,7 +128,6 @@
     border-radius: 1.875em;
     padding: 0.5em;
   }
-
   .search:hover > .search-txt {
     width: 7.5em;
   }
@@ -122,5 +149,8 @@
 
   .profile_section > div > p {
     font-size: 0.6em;
+  }
+  .country_list {
+    left: 10%;
   }
 }

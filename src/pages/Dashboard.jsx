@@ -8,6 +8,7 @@ import TemperatureCard from "../components/TemperatureCard";
 import "./Dashboard.css";
 import React, { useEffect, useCallback, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import data from "../assets/codes.json";
 import {
   getWeatherDetails,
   getForeCastDetails,
@@ -16,6 +17,13 @@ import { tempConverter } from "../utils";
 
 function Dashboard(props) {
   const [toggle, setToggle] = useState(false);
+  const [filteredData, setFilteredData] = useState([]);
+  const [wordEntered, setWordEntered] = useState("");
+  const [coordinates, setCoordinates] = useState({
+    lat: props.latitude,
+    lon: props.longitude,
+  });
+
   const weatherData = useSelector((state) => state.weather);
 
   const dispatch = useDispatch();
@@ -35,16 +43,35 @@ function Dashboard(props) {
   );
 
   useEffect(() => {
-    const coordinates = {
-      lat: props.latitude,
-      lon: props.longitude,
-    };
     getWeather(coordinates);
     getForeCast(coordinates);
-  }, [getWeather, getForeCast, props.latitude, props.longitude]);
+  }, [getWeather, getForeCast, coordinates]);
 
   const toggleTemp = () => {
     setToggle(!toggle);
+  };
+
+  const filterHandler = (e) => {
+    const searchWord = e.target.value;
+    setWordEntered(searchWord);
+
+    const newFilter = data.ref_country_codes.filter((value) => {
+      return value.country.toLowerCase().includes(searchWord.toLowerCase());
+    });
+    setFilteredData(newFilter);
+  };
+
+  const searchHandler = (e) => {
+    // find the country data from the array that matches the text from the clicked div
+    const clickedCountry = data.ref_country_codes.find((country) => {
+      return country.country === e.target.innerText;
+    });
+    setCoordinates({
+      lat: clickedCountry.latitude,
+      lon: clickedCountry.longitude,
+    });
+    setFilteredData([]);
+    setWordEntered("");
   };
 
   return (
@@ -53,6 +80,10 @@ function Dashboard(props) {
         <Navbar
           place={weatherData?.data?.location?.name}
           degree={tempConverter(toggle, weatherData?.data?.current?.temp_c)}
+          search={wordEntered}
+          filterHandler={(e) => filterHandler(e)}
+          filterd_data={filteredData}
+          searches={(e) => searchHandler(e)}
         />
       )}
 

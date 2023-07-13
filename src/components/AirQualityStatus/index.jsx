@@ -15,7 +15,7 @@ export default function AirQualityStatus(props) {
           <span className="air_degree_2">AQI</span>
           <div>{props.wind_direction}</div>
         </div>
-        <div className="range_box"></div>
+        
       </div>
     </>
   );

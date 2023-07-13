@@ -3,7 +3,7 @@ import axios from "axios";
 export const getWeatherDetails = async (coordinates) => {
   try {
     const { data } = await axios.get(
-      `http://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_API_KEY}&q=${coordinates.lat},${coordinates.lon}&aqi=yes
+      `https://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_API_KEY}&q=${coordinates.lat},${coordinates.lon}&aqi=yes
       `
     );
     return data;
@@ -15,7 +15,7 @@ export const getWeatherDetails = async (coordinates) => {
 export const getForeCastDetails = async (coordinates) => {
   try {
     const { data } = await axios.get(
-      `http://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_API_KEY}&q=${coordinates.lat},${coordinates.lon}&days=10&aqi=no&alerts=no
+      `https://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_API_KEY}&q=${coordinates.lat},${coordinates.lon}&days=10&aqi=no&alerts=no
       `
     );
     return data;
